@@ -1,0 +1,11 @@
+<h1> Reset your password</h1>
+<%= form_for(:user, :url => {:action => 'password_reset'}) do |f| %>
+	<%= f.label :password%>
+	<%= f.text_field :password%>
+	<%= f.hidden_field :reset_token %>
+	<%= f.hidden_field :email %>
+    <div class="form-buttons">
+      <%= submit_tag('Update password') %>
+    </div>
+
+<% end %>

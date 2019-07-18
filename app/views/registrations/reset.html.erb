@@ -1,0 +1,13 @@
+<h1> Reset your password</h1>
+<%= form_tag(:user, url: {controller: 'resets' action: 'update' , id: @user.id} , html: {method: :put}) do |f| %>
+
+   	
+	<%= f.label :password%>
+	<%= f.text_field :password%>
+	<%= f.hidden_field :reset_token %>
+	<%= f.hidden_field :email %>
+    <div class="form-buttons">
+      <%= submit_tag('reset password') %>
+    </div>
+
+<% end %>
